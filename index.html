@@ -10,7 +10,7 @@
 	<link rel="icon" type="image/png" href="balloon.png" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 	<link rel="stylesheet" href="style.css" />
 	<!-- Google tag (gtag.js) -->
@@ -27,74 +27,78 @@
 <body>
 	<div class="scale-container">
 
-		<header class="hero">
-			<img src="balloon.png" alt="" class="hero-mark" aria-hidden="true" />
-			<p class="eyebrow">Widgets &middot; Notifications &middot; 100,000+ affirmations</p>
-			<h1 class="brand">Blumli</h1>
-			<p class="tagline">A kinder voice, every single day.</p>
+		<nav class="topbar">
+			<img src="balloon.png" alt="" class="topbar-mark" aria-hidden="true" />
+			<span class="topbar-name">Blumli</span>
+		</nav>
 
-			<blockquote class="quote-card" id="quoteCard">
-				<span class="quote-mark" aria-hidden="true">&ldquo;</span>
-				<p class="quote-text" id="quoteText">You are exactly where you need to be.</p>
-			</blockquote>
-		</header>
+		<section class="hero">
+			<div class="hero-copy">
+				<p class="eyebrow">Widgets &middot; Notifications &middot; 100,000+ affirmations</p>
+				<h1 class="headline">Feel <span class="accent-word">good,</span><br />every day.</h1>
+				<p class="subhead">Blumli sends a steady stream of positive affirmations straight to your home
+					screen &mdash; so a kinder voice is never more than a glance away.</p>
+				<a class="play-badge" href="https://play.google.com/store/apps/details?id=krski.pstvaffms"
+					target="_blank" rel="noopener noreferrer" aria-label="Get Blumli on Google Play">
+					<img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play">
+				</a>
+			</div>
 
-		<div class="divider" role="presentation"></div>
+			<div class="widget-mock">
+				<div class="widget-mock-header">
+					<img src="balloon.png" alt="" class="widget-mock-icon" />
+					<span class="widget-mock-name">Blumli</span>
+					<span class="widget-mock-time">9:41</span>
+				</div>
+				<p class="widget-mock-quote" id="quoteText">You are exactly where you need to be.</p>
+				<div class="widget-mock-dots" id="quoteDots"></div>
+			</div>
+		</section>
 
-		<ul class="feature-grid">
-			<li>
-				<span class="icon-badge"><span class="material-icons-outlined">auto_awesome</span></span>
-				<div class="feature-text">
-					<p class="feature-title">Affirmations library</p>
-					<p class="feature-description">Over 100,000 affirmations across 100+ uplifting categories.</p>
+		<ul class="bento">
+			<li class="bento-item bento-wide">
+				<span class="bento-icon bento-icon-filled"><span class="material-icons-outlined">auto_awesome</span></span>
+				<div class="bento-text">
+					<p class="bento-title">Affirmations library</p>
+					<p class="bento-description">Over 100,000 affirmations across 100+ uplifting categories &mdash; there's always a new one to find.</p>
 				</div>
 			</li>
-			<li>
-				<span class="icon-badge"><span class="material-icons-outlined">widgets</span></span>
-				<div class="feature-text">
-					<p class="feature-title">Live widgets</p>
-					<p class="feature-description">A fresh affirmation on your home screen, every hour.</p>
+			<li class="bento-item">
+				<span class="bento-icon"><span class="material-icons-outlined">widgets</span></span>
+				<div class="bento-text">
+					<p class="bento-title">Live widgets</p>
+					<p class="bento-description">A fresh line on your home screen, every hour.</p>
 				</div>
 			</li>
-			<li>
-				<span class="icon-badge"><span class="material-icons-outlined">notifications_active</span></span>
-				<div class="feature-text">
-					<p class="feature-title">Positivity on demand</p>
-					<p class="feature-description">Schedule gentle reminders to keep your mindset lifted all day.</p>
+			<li class="bento-item">
+				<span class="bento-icon"><span class="material-icons-outlined">notifications_active</span></span>
+				<div class="bento-text">
+					<p class="bento-title">Positivity on demand</p>
+					<p class="bento-description">Schedule reminders that lift your mindset all day.</p>
 				</div>
 			</li>
-			<li>
-				<span class="icon-badge"><span class="material-icons-outlined">palette</span></span>
-				<div class="feature-text">
-					<p class="feature-title">Customizable themes</p>
-					<p class="feature-description">Personalized looks tuned to your personality, mood, and goals.</p>
+			<li class="bento-item">
+				<span class="bento-icon"><span class="material-icons-outlined">palette</span></span>
+				<div class="bento-text">
+					<p class="bento-title">Customizable themes</p>
+					<p class="bento-description">Looks tuned to your personality, mood, and goals.</p>
 				</div>
 			</li>
-			<li>
-				<span class="icon-badge"><span class="material-icons-outlined">camera_front</span></span>
-				<div class="feature-text">
-					<p class="feature-title">Self-esteem booster</p>
-					<p class="feature-description">The mirror feature builds daily confidence, face to face.</p>
+			<li class="bento-item">
+				<span class="bento-icon"><span class="material-icons-outlined">camera_front</span></span>
+				<div class="bento-text">
+					<p class="bento-title">Self-esteem booster</p>
+					<p class="bento-description">The mirror feature builds confidence, face to face.</p>
 				</div>
 			</li>
-			<li>
-				<span class="icon-badge"><span class="material-icons-outlined">favorite_border</span></span>
-				<div class="feature-text">
-					<p class="feature-title">Personal collection</p>
-					<p class="feature-description">Save and revisit the affirmations that mean the most to you.</p>
+			<li class="bento-item bento-wide">
+				<span class="bento-icon bento-icon-filled"><span class="material-icons-outlined">favorite_border</span></span>
+				<div class="bento-text">
+					<p class="bento-title">Personal collection</p>
+					<p class="bento-description">Save the lines that land, and build a collection that's entirely your own to revisit whenever you need it.</p>
 				</div>
 			</li>
 		</ul>
-
-		<div class="divider" role="presentation"></div>
-
-		<section class="cta">
-			<p class="cta-label">Available now for Android</p>
-			<a class="google-play-button" href="https://play.google.com/store/apps/details?id=krski.pstvaffms"
-				target="_blank" rel="noopener noreferrer" aria-label="Get Blumli on Google Play">
-				<img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play">
-			</a>
-		</section>
 
 	</div>
 	<script src="script.js"></script>

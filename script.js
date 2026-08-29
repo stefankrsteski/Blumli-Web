@@ -90,7 +90,7 @@ window.addEventListener('resize', updateScale);
 window.addEventListener('load', updateScale);
 
 /* ===============================
-   Affirmation quote rotator
+   Affirmation rotator (widget mockup)
 ================================== */
 const affirmations = [
     'You are exactly where you need to be.',
@@ -104,7 +104,16 @@ const affirmations = [
 
 function startAffirmationRotator() {
     const quoteText = document.getElementById('quoteText');
-    if (!quoteText) return;
+    const dotsWrap = document.getElementById('quoteDots');
+    if (!quoteText || !dotsWrap) return;
+
+    // Build progress dots, one per affirmation
+    affirmations.forEach((_, i) => {
+        const dot = document.createElement('span');
+        if (i === 0) dot.classList.add('is-active');
+        dotsWrap.appendChild(dot);
+    });
+    const dots = dotsWrap.querySelectorAll('span');
 
     let index = 0;
 
@@ -115,6 +124,8 @@ function startAffirmationRotator() {
             index = (index + 1) % affirmations.length;
             quoteText.textContent = affirmations[index];
             quoteText.classList.remove('is-fading');
+
+            dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
         }, 500);
     }, 4500);
 }
