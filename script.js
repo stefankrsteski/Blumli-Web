@@ -89,3 +89,34 @@ function updateScale() {
 window.addEventListener('resize', updateScale);
 window.addEventListener('load', updateScale);
 
+/* ===============================
+   Affirmation quote rotator
+================================== */
+const affirmations = [
+    'You are exactly where you need to be.',
+    'Your calm is contagious.',
+    'Progress, not perfection.',
+    'You are allowed to take up space.',
+    'Today, be gentle with yourself.',
+    'Small steps still move you forward.',
+    'You are worthy of the good things coming your way.'
+];
+
+function startAffirmationRotator() {
+    const quoteText = document.getElementById('quoteText');
+    if (!quoteText) return;
+
+    let index = 0;
+
+    setInterval(() => {
+        quoteText.classList.add('is-fading');
+
+        setTimeout(() => {
+            index = (index + 1) % affirmations.length;
+            quoteText.textContent = affirmations[index];
+            quoteText.classList.remove('is-fading');
+        }, 500);
+    }, 4500);
+}
+
+window.addEventListener('DOMContentLoaded', startAffirmationRotator);
