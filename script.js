@@ -104,28 +104,20 @@ const affirmations = [
 
 function startAffirmationRotator() {
     const quoteText = document.getElementById('quoteText');
-    const dotsWrap = document.getElementById('quoteDots');
-    if (!quoteText || !dotsWrap) return;
-
-    // Build progress dots, one per affirmation
-    affirmations.forEach((_, i) => {
-        const dot = document.createElement('span');
-        if (i === 0) dot.classList.add('is-active');
-        dotsWrap.appendChild(dot);
-    });
-    const dots = dotsWrap.querySelectorAll('span');
+    const quoteMark = document.getElementById('quoteMark');
+    if (!quoteText || !quoteMark) return;
 
     let index = 0;
 
     setInterval(() => {
         quoteText.classList.add('is-fading');
+        quoteMark.classList.add('is-fading');
 
         setTimeout(() => {
             index = (index + 1) % affirmations.length;
             quoteText.textContent = affirmations[index];
             quoteText.classList.remove('is-fading');
-
-            dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+            quoteMark.classList.remove('is-fading');
         }, 500);
     }, 4500);
 }

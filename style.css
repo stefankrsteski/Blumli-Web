@@ -48,9 +48,8 @@ body {
   padding: 40px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: stretch;
-  gap: 44px;
+  gap: 32px;
   box-sizing: border-box;
   background: transparent;
   transition: transform 0.3s ease;
@@ -64,14 +63,16 @@ body {
 .topbar {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: flex-end;
+  gap: 14px;
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
+  flex-shrink: 0;
 }
 
 .topbar-mark {
-  width: 30px;
+  width: 48px;
   height: auto;
   animation: wobble 10s ease-in-out infinite;
   transform-origin: center bottom;
@@ -80,7 +81,7 @@ body {
 .topbar-name {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   letter-spacing: -0.01em;
 }
 
@@ -95,6 +96,7 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
+  flex: 1;
 }
 
 .hero-copy {
@@ -161,8 +163,8 @@ body {
 .widget-mock {
   justify-self: center;
   width: 100%;
-  max-width: 300px;
-  padding: 22px 22px 20px;
+  max-width: 340px;
+  padding: 26px 26px 24px;
   border-radius: 28px;
   background: var(--surface-strong);
   border: 1px solid var(--line);
@@ -195,39 +197,38 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-.widget-mock-quote {
-  min-height: 4.6em;
-  margin: 0 0 16px;
+.widget-mock-mark {
+  display: block;
   font-family: 'Sora', sans-serif;
-  font-weight: 600;
-  font-size: 1.15rem;
-  line-height: 1.4;
+  font-weight: 800;
+  font-size: 3.4rem;
+  line-height: 1;
+  color: var(--accent);
+  margin: 0 0 -14px -4px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.widget-mock-mark.is-fading {
+  opacity: 0;
+  transform: translateY(6px) scale(0.85);
+}
+
+.widget-mock-quote {
+  min-height: 5.2em;
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.35;
   text-align: left;
   color: var(--ink);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
 }
 
 .widget-mock-quote.is-fading {
   opacity: 0;
-  transform: translateY(4px);
-}
-
-.widget-mock-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.widget-mock-dots span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--ink-faint);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.widget-mock-dots span.is-active {
-  background: var(--accent);
-  transform: scale(1.2);
+  transform: translateY(10px) scale(0.97);
+  filter: blur(2px);
 }
 
 /* ===============================
@@ -237,11 +238,13 @@ body {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
   padding: 0;
   width: 100%;
+  flex: 1;
 }
 
 .bento-item {
@@ -249,8 +252,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   gap: 14px;
-  padding: 22px;
+  padding: 28px;
   text-align: left;
   border-radius: 20px;
   border: 1px solid var(--line);
@@ -396,6 +400,7 @@ body {
 
   .bento {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
   }
 
   .bento-wide {
