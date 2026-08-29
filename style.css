@@ -48,8 +48,9 @@ body {
   padding: 40px 16px;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
   box-sizing: border-box;
   background: transparent;
   transition: transform 0.3s ease;
@@ -63,16 +64,15 @@ body {
 .topbar {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 14px;
+  justify-content: flex-start;
+  gap: 10px;
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  flex-shrink: 0;
 }
 
 .topbar-mark {
-  width: 48px;
+  width: 30px;
   height: auto;
   animation: wobble 10s ease-in-out infinite;
   transform-origin: center bottom;
@@ -81,7 +81,7 @@ body {
 .topbar-name {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.05rem;
   letter-spacing: -0.01em;
 }
 
@@ -90,13 +90,12 @@ body {
 ================================== */
 .hero {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 56px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
   align-items: center;
-  max-width: 1100px;
+  max-width: 940px;
   margin: 0 auto;
   width: 100%;
-  flex: 1;
 }
 
 .hero-copy {
@@ -128,7 +127,7 @@ body {
 
 .subhead {
   margin: 0 0 28px;
-  max-width: 420px;
+  max-width: 480px;
   font-size: 1.05rem;
   line-height: 1.55;
   color: var(--ink-soft);
@@ -138,23 +137,21 @@ body {
   display: inline-flex;
   align-items: center;
   border-radius: 12px;
-  padding: 4px;
-  background: var(--surface-strong);
-  border: 1px solid var(--line);
-  box-shadow: 0 8px 20px rgba(30, 35, 64, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.25s ease;
 }
 
 .play-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(30, 35, 64, 0.18);
 }
 
 .play-badge img {
   height: 44px;
   width: auto;
   display: block;
-  border-radius: 8px;
 }
 
 /* ===============================
@@ -163,8 +160,8 @@ body {
 .widget-mock {
   justify-self: center;
   width: 100%;
-  max-width: 340px;
-  padding: 26px 26px 24px;
+  max-width: 300px;
+  padding: 22px 22px 20px;
   border-radius: 28px;
   background: var(--surface-strong);
   border: 1px solid var(--line);
@@ -201,10 +198,10 @@ body {
   display: block;
   font-family: 'Sora', sans-serif;
   font-weight: 800;
-  font-size: 3.4rem;
+  font-size: 3rem;
   line-height: 1;
   color: var(--accent);
-  margin: 0 0 -14px -4px;
+  margin: 0 0 -12px -2px;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -214,12 +211,12 @@ body {
 }
 
 .widget-mock-quote {
-  min-height: 5.2em;
+  min-height: 4.6em;
   margin: 0;
   font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.35;
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.4;
   text-align: left;
   color: var(--ink);
   transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
@@ -238,13 +235,11 @@ body {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 1000px;
+  gap: 16px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0;
   width: 100%;
-  flex: 1;
 }
 
 .bento-item {
@@ -252,9 +247,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   gap: 14px;
-  padding: 28px;
+  padding: 22px;
   text-align: left;
   border-radius: 20px;
   border: 1px solid var(--line);
@@ -400,7 +394,6 @@ body {
 
   .bento {
     grid-template-columns: 1fr;
-    grid-template-rows: none;
   }
 
   .bento-wide {
