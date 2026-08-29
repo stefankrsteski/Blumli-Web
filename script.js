@@ -15,7 +15,8 @@ function createBalloon(initial = false) {
     const duration = 8 + Math.random() * 6;
     const delay = initial ? Math.random() * duration : 0;
 
-    wrapper.style.left = Math.random() * 100 + 'vw';
+    const maxLeft = Math.max(window.innerWidth - size, 0);
+    wrapper.style.left = `${Math.random() * maxLeft}px`;
     wrapper.style.width = `${size}px`;
     wrapper.style.animation = `floatUp ${duration}s linear ${-delay}s forwards`;
 
@@ -65,29 +66,6 @@ document.addEventListener('visibilitychange', () => {
         startBalloons();
     }
 });
-
-function updateScale() {
-    const vw = window.innerWidth;
-
-    // Only apply scaling if viewport is wider than 300px
-    if (vw <= 300) return;
-
-    const container = document.querySelector('.scale-container');
-    const vh = window.innerHeight;
-
-    const designWidth = 1200;
-    const designHeight = 800;
-
-    const scaleW = vw / designWidth;
-    const scaleH = vh / designHeight;
-
-    const scale = Math.min(scaleW, scaleH, 1);
-
-    container.style.transform = `scale(${scale})`;
-}
-
-window.addEventListener('resize', updateScale);
-window.addEventListener('load', updateScale);
 
 /* ===============================
    Affirmation rotator (widget mockup)
