@@ -72,12 +72,15 @@ document.addEventListener('visibilitychange', () => {
 ================================== */
 const affirmations = [
     'You are exactly where you need to be.',
-    'Your calm is contagious.',
+    'Something good can happen today.',
     'Progress, not perfection.',
-    'You are allowed to take up space.',
+    'Trust yourself and keep going.',
     'Today, be gentle with yourself.',
     'Small steps still move you forward.',
-    'You are worthy of the good things coming your way.'
+    'You deserve a moment to breathe.',
+    'Keep going. You are closer than you think.',
+    'Let yourself enjoy the moment.',
+    'Trust your own timing.',
 ];
 
 function startAffirmationRotator() {
@@ -101,3 +104,26 @@ function startAffirmationRotator() {
 }
 
 window.addEventListener('DOMContentLoaded', startAffirmationRotator);
+
+/* ===============================
+   Widget time updater
+================================== */
+
+function updateWidgetTime() {
+    const now = new Date();
+
+    const parts = new Intl.DateTimeFormat([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    }).formatToParts(now);
+
+    const hour = parts.find(part => part.type === 'hour').value;
+    const minute = parts.find(part => part.type === 'minute').value;
+
+    document.getElementById('widgetTime').textContent = `${hour}:${minute}`;
+}
+
+updateWidgetTime();
+setInterval(updateWidgetTime, 1000);
+
